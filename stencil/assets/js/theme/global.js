@@ -44,5 +44,16 @@ export default class Global extends PageManager {
         loadingProgressBar();
         sweetAlert();
         next();
+
+        const $hoverOpenItem = $(".navPages-list.pc-ib .navPages-action.has-subMenu").parent("li");
+        $hoverOpenItem.on("mouseover", function() {
+            $(this).find(">.navPages-action").addClass("is-open");
+            $(this).find(">.navPage-subMenu").addClass("is-open");
+
+        }).on("mouseout", function() {
+            $(this).find(">.navPages-action").removeClass("is-open");
+            $(this).find(">.navPage-subMenu").removeClass("is-open");
+
+        });
     }
 }

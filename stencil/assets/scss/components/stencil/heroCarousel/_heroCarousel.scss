@@ -40,6 +40,10 @@
         opacity: 1;
     }
 
+    &.slick-dotted.slick-slider {
+        margin-bottom: 105px;
+    }
+
     .slick-next,
     .slick-prev {
         top: 20%;
@@ -75,6 +79,7 @@
         // scss-lint:disable SelectorDepth, NestingDepth
         li {
             @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            background-color: transparent;
         }
     }
 }

@@ -2,14 +2,18 @@
     <div class="navPages-quickSearch">
         {{> components/common/quick-search}}
     </div>
-    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+    <ul class="navPages-list pc-ib{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.home}}">Home</a>
+        </li>
+
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
                 {{> components/common/navigation-list}}
             {{/if}}
             {{#if ../theme_settings.navigation_design '===' 'alternate'}}
-                {{> components/common/navigation-list-alternate}}
+                {{> components/common/navigation-list-alternate-pc}}
             {{/if}}
             </li>
         {{/each}}
@@ -20,6 +24,44 @@
                  </li>
              {{/each}}
         {{/unless}}
+
+        <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/our-story/">Our Story</a>
+         </li>
+         <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/blog/">Blog</a>
+         </li>
+         <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/contact/">Contact</a>
+         </li>
+    </ul>
+    <ul class="navPages-list mobile{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.home}}">Home</a>
+        </li>
+
+        {{#each categories}}
+            <li class="navPages-item">
+                {{> components/common/navigation-list}}
+            </li>
+        {{/each}}
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each pages}}
+                 <li class="navPages-item navPages-item-page">
+                     <a class="navPages-action" href="{{url}}">{{name}}</a>
+                 </li>
+             {{/each}}
+        {{/unless}}
+
+        <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/our-story/">Our Story</a>
+         </li>
+         <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/blog/">Blog</a>
+         </li>
+         <li class="navPages-item navPages-item-page">
+             <a class="navPages-action" href="/contact/">Contact</a>
+         </li>
     </ul>
     <ul class="navPages-list navPages-list--user">
         {{#if currency_selector.currencies.length '>' 1}}

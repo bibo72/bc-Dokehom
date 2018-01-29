@@ -1,12 +1,53 @@
 {{#if banners.bottom}}
+{{#if page_type '===' 'default'}}{{else}}
 <div class="banners" data-banner-location="bottom">
     <div class="banner">
         {{{limit banners.bottom 1}}}
     </div>
 </div>
 {{/if}}
+{{/if}}
 <footer class="footer" role="contentinfo">
     <div class="container">
+        
+        <section class="footer-info">
+            {{#each pages}}
+            {{#if children}}
+            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                <h5 class="footer-info-heading">{{name}}</h5>
+                <ul class="footer-info-list">
+                    {{#each children}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                    
+                </ul>
+            </article>
+            {{/if}}
+            {{/each}}
+
+            <article class="footer-info-col footer-info-col--newsletter" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+
+                {{#if settings.address}}
+                <address>{{nl2br settings.address}}</address>
+                {{/if}}
+
+                {{#if settings.phone_number}}
+                    <p class="info-span">{{lang 'footer.call_us' phone_number=settings.phone_number}}</p>
+                {{/if}}
+
+                {{#if theme_settings.site_email}}
+                    <p class="info-span">{{theme_settings.site_email}}</p>
+                {{/if}}
+
+                {{> components/common/payment-icons}}
+            </article>
+        </section>
+
         {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
             <article class="footer-info-col
                 footer-info-col--social
@@ -16,68 +57,17 @@
                     {{> components/common/social-links}}
             </article>
         {{/if}}
-        <section class="footer-info">
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li>
-                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                    </li>
-                </ul>
-            </article>
 
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
-                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </article>
-
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
-                <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each shop_by_brand}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                </ul>
-            </article>
-            {{/and}}
-
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
-                {{/if}}
-            </article>
-            {{/if}}
-
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
-            </article>
-        </section>
         {{#if theme_settings.geotrust_ssl_common_name}}
             <div class="footer-geotrust-ssl-seal">
                 {{> components/common/geotrust-ssl-seal}}
             </div>
         {{/if}}
+        
+    </div>
+
+    <div class="footer-bottom">
+    <div class="container">
         {{#if theme_settings.show_powered_by}}
             <div class="footer-copyright">
                 <p class="powered-by">Powered by <a href="https://www.bigcommerce.com/" rel="nofollow">BigCommerce</a></p>
@@ -85,8 +75,13 @@
         {{/if}}
         {{#if theme_settings.show_copyright_footer}}
             <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}}. All rights reserved. &nbsp;
+                <a href="/terms-of-use/">Terms of Use</a>
+                <span class="split-line">|</span>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                </p>
             </div>
         {{/if}}
+    </div>
     </div>
 </footer>

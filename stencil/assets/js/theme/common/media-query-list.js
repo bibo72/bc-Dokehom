@@ -3,9 +3,11 @@
  * if you decide to change breakpoint values
  */
 const breakpointSizes = {
+    xlarge: 1450,
     large: 1261,
-    medium: 801,
-    small: 551,
+    medium: 1025,
+    small: 768,
+    xsmall: 551,
 };
 
 /**

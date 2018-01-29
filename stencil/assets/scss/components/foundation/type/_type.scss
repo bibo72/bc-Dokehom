@@ -36,8 +36,34 @@ cite {
 }
 
 .page-heading {
+    position: relative;
     margin: 0 0 spacing("double");
     text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint("medium") {
+        font-size: 30px;
+        margin-bottom: 70px;
+    }
+
+    &.has-line {
+        &:before, &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            border-bottom: 1px solid stencilColor("color-yellow");
+        }
+
+        &:before {
+            left: 0;
+
+        }
+        &:after {
+            right: 0;
+        }
+    }
 }
 
 h1 {

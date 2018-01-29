@@ -18,13 +18,79 @@ blog:
     {{{snippet 'home_content'}}}
 {{/partial}}
 
-{{#partial "page"}}
+{{#partial "full"}}
 
     {{#each shipping_messages}}
         {{> components/common/alert-info message}}
     {{/each}}
 
 <div class="main full">
+
+    {{#if banners.bottom}}
+    <div class="home-category-secttion container">
+        {{{limit banners.bottom 1}}}
+
+        <!-- <ul class="ulList ulList-maxCol3">
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-1.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-1.jpg" alt="category-1.jpg" width="427" height="426" /></a></div>
+                    <div class="text-overlay">
+                        Coat Hook
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-2.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-2.jpg" alt="category-2.jpg" width="427" height="426" /></a></div>
+                    <div class="text-overlay">
+                        Laundry Bag
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-3.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-3.jpg" alt="category-3.jpg" width="428" height="426" /></a></div>
+                    <div class="text-overlay">
+                        Laundry Basket
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-4.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-4.jpg" alt="category-4.jpg" width="427" height="426" /></a></div>
+                    <div class="text-overlay">
+                        Square Storage Baske
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-5.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-5.jpg" alt="category-5.jpg" width="428" height="425" /></a></div>
+                    <div class="text-overlay">
+                        Storage Bag
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-wrap">
+                    <div class="img-wrap"><a href="/"><img class="__mce_add_custom__" title="category-6.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/category-6.jpg" alt="category-6.jpg" width="428" height="424" /></a></div>
+                    <div class="text-overlay">
+                        Round Storage Basket
+                    </div>
+                </div>
+            </li>
+        </ul> -->
+    </div>
+    {{/if}}
+
+    
+
+    <div class="home-bannerFull-section">
+        <a href="/"><img class="__mce_add_custom__" title="banner-mid.jpg" src="https://store-sk4ty64mc4.mybigcommerce.com/product_images/uploaded_images/banner-mid.jpg" alt="banner-mid.jpg" width="1920" height="442" /></a>
+    </div>
+
+
+    <div class="container">
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
@@ -36,6 +102,7 @@ blog:
     {{#if products.new}}
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
+    </div>
 </div>
 {{/partial}}
 {{> layout/base}}

@@ -15,8 +15,44 @@
 .footer {
     background-color: $footer-background;
     border-top: container("border");
-    padding: spacing("double") 0;
+    padding: spacing("double") 0 0;
+    font-family: "Myriad Pro";
+
+    .form {
+        margin-bottom: 0;
+    }
+
+    .form-field {
+        border: 1px solid #dee1e5;
+        padding: 5px;
+    }
+    .form-input {
+        border: none;
+    }
+    .button {
+        border-radius: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
+
+.footer-bottom {
+    color: #000;
+    padding: 16px 0;
+    background-color: stencilColor("color-yellow");
+
+    a {
+        &:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    }
+
+    .split-line {
+        margin: 0 5px;
+    }
+}
+
 
 .footer-info {
     @include grid-row($behavior: nest);
@@ -49,11 +85,25 @@
     > :last-child {
         margin-bottom: 0;
     }
+
+    address {
+        margin-bottom: 0.6rem;
+        line-height: 1.2;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .info-span {
+        margin-bottom: 0.2rem;
+    }
 }
 
 .footer-info-col--small {
     @include breakpoint("medium") {
-        width: width("2/12");
+        //width: width("2/12");
+        width: 22%;
     }
 }
 
@@ -86,8 +136,13 @@
 
 .footer-info-heading {
     color: $footer-heading-fontColor;
-    font-size: fontSize("base");
+    font-size: 16px;
     text-transform: inherit;
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 1.4rem;
 }
 
 .footer-info-list {
@@ -97,6 +152,8 @@
     a {
         color: stencilColor("color-textSecondary");
         text-decoration: none;
+        font-family: "Myriad Pro";
+        line-height: 2;
 
         // scss-lint:disable NestingDepth
         &:hover {
@@ -114,18 +171,18 @@
     }
 
     > .powered-by {
-        color: stencilColor("color-textSecondary");
+        color: #000;
         font-size: fontSize("tiny");
         margin: 0;
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: #000;
         text-decoration: none;
 
         // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: #000;
         }
         // scss-lint:enable NestingDepth
     }

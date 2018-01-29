@@ -17,6 +17,11 @@
     font-size: 0; // 1
     margin-bottom: spacing("single");
 
+    @include breakpoint("xlarge") {
+        margin-left: -45px;
+        margin-right: -45px;
+    }
+
     .product {
         @include grid-column(6, $float: none);
         display: inline-block;
@@ -29,6 +34,11 @@
 
         @include breakpoint("medium") {
             width: grid-calc(3, $total-columns);
+        }
+
+        @include breakpoint("xlarge") {
+            padding-left: 45px;
+            padding-right: 45px;
         }
     }
 }

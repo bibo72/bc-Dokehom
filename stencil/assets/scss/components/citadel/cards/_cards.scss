@@ -11,17 +11,28 @@
 //
 // -----------------------------------------------------------------------------
 
+.card {
+    background-color: #fff;
 
-.card-figure {
-    margin-top: $card-figure-marginTop;
-    position: relative;
+    @include breakpoint("xlarge") {
+        margin-bottom: 90px;
+
+    }
+
     &:hover {
+        box-shadow: 0 0 15px 8px #ddd;
 
         // scss-lint:disable NestingDepth
         .card-figcaption {
             opacity: 1;
         }
     }
+}
+
+.card-figure {
+    margin-top: $card-figure-marginTop;
+    position: relative;
+    
 }
 
 .card-img-container {
@@ -56,6 +67,15 @@
 .card-title {
     font-size: $card-title-fontSize;
     margin: $card-title-margin;
+    font-family: "HelveticaNeueLTPro Roman";
+    font-weight: 400;
+
+    @include breakpoint("medium") {
+        font-size: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
     > a {
         color: $card-title-color;
@@ -83,6 +103,13 @@
     display: $card-figcaption-button-display;
     margin: $card-figcaption-button-margin;
 
+    @include breakpoint("medium") {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 0;
+    }
+
     &:active {
         background-color: $card-figcaption-button-backgroundHover;
         border: $card-figcaption-button-border;
@@ -95,9 +122,20 @@
 
 .card-body {
     text-align: center;
+    padding: 1rem 1rem 1.3rem;
 
     @include breakpoint("small") {
-        text-align: left;
+        //text-align: left;
+    }
+
+    .card-price {
+        font-weight: 500;
+        color: #333;
+        
+
+        @include breakpoint("medium") {
+            font-size: 18px;
+        }
     }
 }
 

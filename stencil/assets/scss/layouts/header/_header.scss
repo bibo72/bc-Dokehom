@@ -21,7 +21,8 @@
     z-index: zIndex("low");
 
     @include breakpoint("medium") {
-        border-bottom: container("border");
+        border-bottom: none;
+        border-top: 6px solid stencilColor("color-yellow");
         overflow: visible;
         position: relative;
     }
@@ -46,8 +47,20 @@
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        //margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
+        margin: 0;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: $logo-width;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        z-index: zIndex("high");
 
         .header.fixed & {
             background-color: color("greys", "lightest");
@@ -167,6 +180,7 @@
 
     @include breakpoint("medium") {
         max-height: none;
+        right: initial;
     }
 }
 
