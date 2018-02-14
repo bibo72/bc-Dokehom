@@ -7,6 +7,17 @@
             <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
         </li>
     {{/if}}
+    {{#if settings.show_product_reviews}}
+        <li class="tab">
+            <a class="tab-title" href="#tab-reviews">Reviews</a>
+        </li>
+    {{/if}}
+    {{#if product.videos.list.length}}
+        <li class="tab">
+            <a class="tab-title" href="#tab-videos">Video</a>
+        </li>
+    {{/if}}
+
 </ul>
 <div class="tabs-contents">
     <div class="tab-content is-active" id="tab-description">
@@ -18,4 +29,18 @@
            {{{product.warranty}}}
        </div>
    {{/if}}
+
+   {{#if settings.show_product_reviews}}
+        <div class="tab-content" id="tab-reviews">
+        {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+        </div>
+    {{/if}}
+
+   {{#if product.videos.list.length}}
+      <div class="tab-content" id="tab-videos">
+        {{> components/products/videos product.videos}}
+      </div>
+    {{/if}}
+
+        
 </div>

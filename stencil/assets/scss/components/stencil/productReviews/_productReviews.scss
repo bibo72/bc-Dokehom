@@ -26,11 +26,11 @@
     vertical-align: top;
 
     @include breakpoint("medium") {
-        width: grid-calc(6, $total-columns);
+        //width: grid-calc(6, $total-columns);
     }
 
     @include breakpoint("large") {
-        width: grid-calc(4, $total-columns);
+        //width: grid-calc(4, $total-columns);
     }
 }
 

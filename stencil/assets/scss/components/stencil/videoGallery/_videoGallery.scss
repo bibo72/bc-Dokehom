@@ -1,6 +1,12 @@
 // =============================================================================
 // VIDEO GALLERY
 // =============================================================================
+.videoGallery {
+    @include breakpoint("medium") {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
 
 .videoGallery-main {
     @include flex-video-container();
