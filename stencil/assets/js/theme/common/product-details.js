@@ -7,6 +7,7 @@ import modalFactory from '../global/modal';
 import _ from 'lodash';
 import swal from 'sweetalert2';
 import Wishlist from '../wishlist';
+import StencilDropDown from '../global/stencil-dropdown';
 
 export default class ProductDetails {
     constructor($scope, context, productAttributesData = {}) {
@@ -49,6 +50,55 @@ export default class ProductDetails {
         $productOptionsElement.show();
 
         this.previewModal = modalFactory('#previewModal')[0];
+
+        this.initAmazonSelect($scope);
+    }
+
+    initAmazonSelect($scope) {
+        const $amazonSelectWrap = $('[data-amazon-select]', $scope);
+        const $amazonSelectAction = $("#form-select-amazon-action", $scope);
+        const $amazonSelectList = $("#form-select-amazon-list", $scope);
+        const $amazonSelectItems = $amazonSelectList.find('li');
+        const $formSelectAmazonLink = $('[data-select-amazon-link]', $scope);
+
+        const amazonDropDown = new StencilDropDown();
+        amazonDropDown.bind($amazonSelectAction, $amazonSelectList);
+
+        if ($amazonSelectItems.length) {
+            $amazonSelectWrap.show();
+            const $amazonItem = $amazonSelectItems.eq(0);
+            const hrefValue = $amazonItem.attr('data-value');
+            const siteValue = $amazonItem.attr('data-site');
+            $formSelectAmazonLink.attr('href', hrefValue);
+            $formSelectAmazonLink.attr('id', siteValue);
+            $amazonSelectAction.text($amazonItem.text());
+        } else {
+            $amazonSelectWrap.remove();
+        }
+
+        $amazonSelectItems.on('click', function() {
+            const $amazonItem = $(this);
+            const hrefValue = $amazonItem.attr('data-value');
+            const siteValue = $amazonItem.attr('data-site');
+            $formSelectAmazonLink.attr('href', hrefValue);
+            $formSelectAmazonLink.attr('id', siteValue);
+            $amazonSelectAction.text($amazonItem.text());
+            amazonDropDown.hide($amazonSelectList);
+
+        });
+        $('body').on('click', (e) => {
+            if ($(e.target).closest('[data-amazon-select]').length === 0) {
+                amazonDropDown.hide($amazonSelectList);
+            }
+        });
+
+        const $toAmazonButton = $('[data-select-amazon-link]', $scope);
+        $toAmazonButton.on('click', function() {
+            const amazonSiteId = $(this).attr('id');
+            fbq('track', 'BuyOnAmazon', {
+                amazonSite: amazonSiteId
+            });
+        });
     }
 
     /**

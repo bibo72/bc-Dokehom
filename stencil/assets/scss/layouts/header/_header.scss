@@ -21,7 +21,7 @@
     z-index: zIndex("low");
 
     @include breakpoint("medium") {
-        border-bottom: none;
+        border-bottom: 1px solid #eee;
         border-top: 6px solid stencilColor("color-yellow");
         overflow: visible;
         position: relative;

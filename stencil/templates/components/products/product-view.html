@@ -171,10 +171,10 @@
                     </div>
                 {{/if}}
 
-                {{#each product.custom_fields}}
+                <!-- {{!#each product.custom_fields}}
                     <dt class="productView-info-name">{{name}}:</dt>
                     <dd class="productView-info-value">{{{value}}}</dd>
-                {{/each}}
+                {{!/each}} -->
             </dl>
         </div>
     </section>
@@ -252,9 +252,42 @@
                     {{/if}}
                 {{/if}}
             </form>
+
             {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
+
+            <div class="amazon-block" data-amazon-select style="display: none;">
+                <div class="form-action">
+
+                    <div class="form-select-wrap" id="form-select-amazon">
+                    <span class="form-select-label" id="form-select-amazon-action" aria-controls="form-select-amazon-list" aria-expanded="false">Amazon Site</span>
+                    <ul class="form-select-ul form-select-dropdown" id="form-select-amazon-list">
+                    {{#each product.custom_fields}}
+                        {{#if name '==' 'Amazon_us'}}<li class="" data-value="{{value}}" data-site="{{toLowerCase name}}">United States</li>{{/if}}
+                        {{#if name '==' 'Amazon_uk'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">United Kingdom</li>{{/if}}
+                        {{#if name '==' 'Amazon_es'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Spain (España)</li>{{/if}}
+                        {{#if name '==' 'Amazon_nl'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Netherlands (Nederland)</li>{{/if}}
+                        {{#if name '==' 'Amazon_mx'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Mexico (México)</li>{{/if}}
+                        {{#if name '==' 'Amazon_jp'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Japan (日本)</li>{{/if}}
+                        {{#if name '==' 'Amazon_it'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Italy (Italia)</li>{{/if}}
+                        {{#if name '==' 'Amazon_in'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">India</li>{{/if}}
+                        {{#if name '==' 'Amazon_de'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Germany (Deutschland)</li>{{/if}}
+                        {{#if name '==' 'Amazon_fr'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">France</li>{{/if}}
+                        {{#if name '==' 'Amazon_cn'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">China (中国大陆)</li>{{/if}}
+                        {{#if name '==' 'Amazon_ca'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Canada</li>{{/if}}
+                        {{#if name '==' 'Amazon_br'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Brazil (Brasil)</li>{{/if}}
+                        {{#if name '==' 'Amazon_au'}}<li data-value="{{value}}" data-site="{{toLowerCase name}}">Australia</li>{{/if}}                   
+                    {{/each}}
+                    </ul>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <a href="javascript:void(0);" target="_blank" class="button button--amazonLink" id="form-select-amazon-link" data-select-amazon-link>Buy on <span>Amazon</span></a>
+                </div>
+            </div>
+
+            
         </div>
         {{> components/common/share}}
         {{{snippet 'product_details'}}}

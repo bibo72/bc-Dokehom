@@ -57,6 +57,11 @@
                         {{/if}}
                     {{/if}}
                 {{/or}}
+
+                {{#any custom_fields name='Amazon'}}
+                <a href="{{url}}" class="button card-figcaption-button">Buy on Amazon</a>
+                {{/any}}
+
             </div>
         </figcaption>
     </figure>

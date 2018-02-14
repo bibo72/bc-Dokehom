@@ -16,7 +16,9 @@
         margin-top: spacing("single") + spacing("base"); // 1
     }
 }
-
+.body--home {
+    background-color: #eee;
+}
 
 .page {
     @include grid-row(

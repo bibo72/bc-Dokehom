@@ -154,3 +154,106 @@
         margin-bottom: 105px;
     }
 }
+
+//amazon
+//custom select
+.amazon-block {
+    .form-action {
+        vertical-align: top;
+        margin-top: 0;
+
+        @include breakpoint("large") {
+            margin-right: spacing("half");
+            min-width: 250px;
+        }
+    }
+}
+.form-select-wrap {
+    position: relative;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    .form-select-label {
+        position: relative;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #444;
+        color: #fff;
+        border-radius: 4px;
+        background-image: url('../img/amazon.png');
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        //background-size: 90%;
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            margin-top: -3px;
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 8px solid #fff;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+        }
+    }
+
+    .form-select-ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        z-index: 1;
+        box-shadow: 0 1px 5px #ccc;
+
+        &.is-open {
+            display: block;
+            visibility: visible;
+        }
+
+        li {
+            padding: 5px 15px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #dedede;
+            }
+
+            &.selected {
+                background-color: #dedede;
+            }
+        }
+    }
+}
+.button--amazonLink {
+    background-color: #f90;
+    border: 2px solid #f90;
+    color: #232f3e;
+    font-weight: 700;
+
+    &:hover {
+        background-color: #f90;
+        border-color: #232f3e;
+        color: #232f3e;
+    }
+}
+
+.form-wishlist {
+    margin-bottom: 0;
+}

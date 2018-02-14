@@ -1,0 +1,246 @@
+$tab-font-color: #666;
+$tab-default-color: #f0f0f0;
+$tab-border-color: #d6d6d6;
+$tab-active-color: #ffffff;
+//tabs
+.tabs {
+    border-bottom: 1px solid $tab-border-color;
+}
+.tab {
+    border: none;
+    
+
+    @include breakpoint("small") {
+        float: left;
+    }
+
+    &+.tab {
+        margin-top: 5px;
+
+        @include breakpoint("small") {
+            margin-left: 5px;
+            margin-top: 0;
+        }
+    }
+
+    &.is-active {
+        background-color: $tab-active-color;
+        //border: none;
+        border-color: #385aa0;
+        
+        .tab-title {
+            
+        }
+    }
+}
+.tab-title {
+    outline: none;
+    color: $tab-font-color;
+
+    @include breakpoint("small") {
+        padding: 0.78571rem 1.5rem;
+        border: 1px solid $tab-border-color;
+        border-bottom: none;
+        background-color: $tab-default-color;
+    }
+}
+
+.tabs-alt {
+    @include breakpoint("medium") {
+        border: none;
+        
+        .tab {
+        
+            float: right;
+            padding: 0 12px;
+            background-color: transparent;
+
+            &.is-active {
+                background-color: transparent;
+                border-color: transparent;
+
+                .tab-title {
+                    color: #fff;
+                    background-color: stencilColor("color-blue");
+
+                    &:after {
+                        position: absolute;
+                        bottom: -5px;
+                        left: 50%;
+                        margin-left: -6px;
+                        display: block;
+                        content: "";
+                        border-top: 6px solid stencilColor("color-blue");
+                        border-right: 6px solid transparent;
+                        border-left: 6px solid transparent;
+                    }
+                }
+            }
+
+            +.tab {
+                margin: 0;
+                border-right: container("border");
+
+            }
+        }
+
+        .tab-title {
+            position: relative;
+            padding: 5px 15px;
+            border-radius: 3px;
+            background-color: transparent;
+            border: none;
+        }
+    } 
+    
+}
+
+.tabs-contents-alt {
+    .tab-content {
+        padding: 0;
+    } 
+}
+
+
+
+//ulList
+.ulList {
+
+    @include u-listBullets("none");
+    @include grid-row($behavior: "nest");
+    font-size: 0; // 1
+    margin-bottom: spacing("single");
+
+    @include breakpoint("large") {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    li {
+        @include grid-column(6, $float: none);
+        display: inline-block;
+        font-size: fontSize("base"); // 1
+        vertical-align: top;
+        margin-bottom: 15px;
+
+        @include breakpoint("small") {
+            width: grid-calc(4, $total-columns);
+        }
+
+        @include breakpoint("medium") {
+            width: grid-calc(3, $total-columns);
+            margin-bottom: 0;
+        }
+        @include breakpoint("large") {
+            padding-left: 15px;
+            padding-right: 15px;
+
+        }
+    }
+
+    .wrap {
+    	position: relative;
+    	background-color: #fff;
+
+    	
+    }
+
+    .item-thumbnail {
+    	position: relative;
+    	margin: 0;
+    	background-position: cneter;
+    	background-size: cover;
+    	background-repeat: no-repeat;
+
+    	&:before {
+    		display: block;
+    		content: "";
+    		width: 100%;
+    		padding-bottom: 65%;
+    	}
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .item-figure-link {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+
+    }
+    .item-body {
+    	padding: 20px;
+
+    	&.has-border {
+    		border: container("border");
+    	}
+    }
+
+    .item-title {
+    	margin: 0;
+    	line-height: 1.1;
+    	margin-bottom: 9px;
+    	font-size: 18px;
+    	text-transform: uppercase;
+
+    	a {
+    		display: block;
+    		text-decoration: none;
+    		white-space: nowrap;
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    	}
+
+    	
+    }
+
+    .item-desc {
+    	color: stencilColor("color-textSecondary");
+    	line-height: 1.3;
+
+    	&.small {
+    		font-size: 12px;
+
+    	}
+
+    }
+
+
+}
+
+.productView-title {
+	line-height: 1.2;
+	margin-top: 0;
+}
+.productView-brand a {
+	text-decoration: none;
+}
+
+.productView-info {
+	margin-top: 1.5rem;
+
+	&> :first-child {
+		margin-top: 0;
+	}
+}
+.productView-info-name {
+	font-weight: 700;
+}
+
+.productView-info-name, .productView-info-value {
+	float: left;
+}
+
+.productView-description {
+	width: 100%;
+}
