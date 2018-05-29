@@ -1,9 +1,11 @@
 <h2 class="page-heading has-line">{{lang 'products.new' }}</h2>
 
-<ul class="productGrid productGrid--maxCol{{ columns }}">
-    {{#each products}}
+<!-- <ul class="productGrid productGrid--maxCol{{ columns }}">
+    {{!#each products}}
         <li class="product">
-            {{>components/products/card theme_settings=../theme_settings customer=../customer}}
+            {{!>components/products/card theme_settings=../theme_settings customer=../customer}}
         </li>
-    {{/each}}
-</ul>
+    {{!/each}}
+</ul> -->
+
+{{> components/products/carousel-home products=products}}

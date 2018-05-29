@@ -48,13 +48,13 @@
     z-index: zIndex("lower");
 
     @include breakpoint("medium") {
-        background: transparent;
+        background: #303030;
         display: block;
         height: auto;
-        //padding: 0;
+        padding: 0;
         position: relative;
 
-        padding: 30px 0 30px $logo-width;
+        //padding: 30px 0 30px $logo-width;
     }
 
     &.is-open {
@@ -81,7 +81,7 @@
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
-        text-align: right;
+        //text-align: right;
     }
 
     ul {
@@ -101,6 +101,27 @@
             border-left: 0;
             margin: auto;
             padding-left: 0;
+        }
+    }
+
+    .navPages-item {
+        @include breakpoint("medium") {
+            &:after {
+                display: inline-block;
+                content: "";
+                margin: 0 5px;
+                border-left: 1px solid #fff;
+                height: 25px;
+                margin-bottom: -7px;
+
+
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -191,15 +212,16 @@
     color: stencilColor("navPages-color");
     display: block;
     font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    //font-weight: fontWeight("bold");
     padding: spacing("half") 0;
     text-decoration: none;
     text-transform: uppercase;
+    //transition: background .15s ease;
 
     @include breakpoint("medium") {
         display: inline-block;
         font-size: 16px;
-        padding: (spacing("half") + spacing("quarter"));
+        padding: 8px spacing("single");
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
@@ -214,6 +236,7 @@
 
     &:hover {
         color: stencilColor("navPages-color-hover");
+        background-color: stencilColor("color-yellow");
 
         // scss-lint:disable NestingDepth
         svg {
@@ -371,21 +394,21 @@
 
         .navPage-subMenu-action.is-open,
         .navPage-subMenu-action:hover {
-            background: $navPage-subMenu-item--is-highlighted-background;
-            color: $navPage-subMenu-item--is-highlighted-color;
+            //background: $navPage-subMenu-item--is-highlighted-background;
+            //color: $navPage-subMenu-item--is-highlighted-color;
             //font-weight: 500;
             //opacity: 0.3;
         }
     }
 }
 
-.navPage-subMenu-action {
+/* .navPage-subMenu-action {
     padding: spacing("half") 0;
 
     @include breakpoint("medium") {
         padding: spacing("half") 0;
     }
-}
+} */
 
 
 //
@@ -408,7 +431,7 @@
 // -----------------------------------------------------------------------------
 
 .navPages-quickSearch {
-    border-bottom: container("border");
+    //border-bottom: container("border");
     margin-bottom: spacing("half");
 
     @include breakpoint("medium") {

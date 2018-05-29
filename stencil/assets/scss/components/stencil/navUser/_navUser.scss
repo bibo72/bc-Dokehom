@@ -21,12 +21,14 @@
 
     @include breakpoint("medium") {
         //padding: 0 spacing("single");
-        padding: 0 0 0 $logo-width;
+        //padding: 0 0 0 $logo-width;
+        padding: 0;
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         z-index: zIndex("high");
+        font-size: 15px;
     }
 
     .dropdown-menu {
@@ -64,9 +66,14 @@
 
 .navUser-action {
     color: stencilColor("navUser-color");
-    padding: spacing("base") spacing("half");
+    padding: spacing("base");
+    margin-left: 3rem;
     text-decoration: none;
     //text-transform: uppercase;
+
+    @include breakpoint("medium") {
+        padding: spacing("base") 3px;
+    }
 
     &:hover,
     &.is-open {
@@ -201,11 +208,26 @@
     .navUser-action {
         display: inline-block;
 
-        &:first-child {
+        /* &:first-child {
             padding-right: 10px;
         }
         &:last-child {
             padding-left: 10px;
+        } */
+    }
+}
+
+.navUser-item--search {
+    @include breakpoint("medium") {
+        float: right;
+        
+
+        .form, .form-field {
+            margin-bottom: 0;
+        }
+
+        .form {
+            padding: 1rem 0;
         }
     }
 }
@@ -302,11 +324,11 @@
     display: none;
     font-size: fontSize("tiny");
     //font-weight: fontWeight("bold");
-    height: 20px; // 1
-    line-height: 20px; // 1
+    height: 18px; // 1
+    line-height: 18px; // 1
     margin-left: spacing("eighth");
     text-align: center;
-    width: 20px; // 1
+    width: 18px; // 1
 }
 
 .countPill--positive {

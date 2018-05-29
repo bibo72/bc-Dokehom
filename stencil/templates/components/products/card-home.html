@@ -1,0 +1,31 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}">
+    <figure class="card-figure">
+        {{#or price.non_sale_price_with_tax price.non_sale_price_without_tax}}
+            {{#if theme_settings.product_sale_badges '===' 'sash'}}
+                <div class="sale-flag-sash">
+                    <span class="sale-text">On Sale!</span>
+                </div>
+            {{else if theme_settings.product_sale_badges '===' 'topleft'}}
+                <div class="sale-flag-side">
+                    <span class="sale-text">On Sale!</span>
+                </div>
+            {{else if theme_settings.product_sale_badges '===' 'burst'}}
+                <div class="starwrap">
+                    <div class="sale-text-burst">On Sale!</div>
+                    <div class="sale-flag-star"></div>
+                </div>
+            {{/if}}
+        {{/or}}
+        {{#if demo}}
+            <div class="card-img-container">
+                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+            </div>
+        {{else}}
+            <a href="{{url}}">
+                <div class="card-img-container">
+                    <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                </div>
+            </a>
+        {{/if}}
+    </figure>
+</article>

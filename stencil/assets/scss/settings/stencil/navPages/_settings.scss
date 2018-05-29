@@ -9,5 +9,5 @@ $navPage-subMenu-horizontal-width:                  rem-calc(215px);
 $navPage-subMenu-item--is-highlighted-background:   stencilColor("color-yellow");
 $navPage-subMenu-item--is-highlighted-color:        #fff;
 $navPages-action-moreIcon-borderColor:              #d6cdc0;
-$navPages-backgroundColor:                          container("fill", "dark");
+$navPages-backgroundColor:                          stencilColor("navPages-backgroundColor");
 $navPages-list--user-borderColor:                   $navPage-borderColor;

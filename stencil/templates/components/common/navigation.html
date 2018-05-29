@@ -1,7 +1,7 @@
 <nav class="navUser">
     {{> components/common/currency-selector}}
 
-    <ul class="navUser-section navUser-section--alt navUser-section--bg">
+    <ul class="navUser-section navUser-section--alt">
         <li class="navUser-item">
             <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav>{{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span></a>
         </li>
@@ -19,20 +19,18 @@
                 <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
             </li> -->
         {{!/if}}
-        <li class="navUser-item navUser-item--account">
-            {{#if customer}}
-                <a class="navUser-action" href="{{urls.account.index}}"><i class="fa fa-user" aria-hidden="true"></i>{{lang 'common.account'}}</a>
-                <a class="navUser-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
-            {{else}}
-                <a class="navUser-action" href="{{urls.auth.login}}"><i class="fa fa-user" aria-hidden="true"></i>{{lang 'common.login'}}</a>
-                {{#if settings.account_creation_enabled}}
-                    <span class="navUser-or">{{lang 'common.or'}}</span> <a class="navUser-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
-                {{/if}}
-            {{/if}}
+        
+
+        <!-- <li class="navUser-item">
+            <a class="navUser-action" href="{{urls.account.wishlists.all}}"><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a>
+        </li> -->
+
+        <li class="navUser-item">
+            <a class="navUser-action" href="/contact-us/">Contact Us</a>
         </li>
 
         <li class="navUser-item">
-            <a class="navUser-action" href="{{urls.account.wishlists.all}}"><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a>
+            <a class="navUser-action" href="/e-catalog/">E-Catalog</a>
         </li>
 
         <li class="navUser-item navUser-item--cart">
@@ -42,15 +40,33 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel"><i class="fa fa-shopping-cart" aria-hidden="true"></i>{{lang 'common.cart'}}</span> <span class="countPill countPill--positive cart-quantity">{{cart.quantity}}</span>
+                <span class="navUser-item-cartLabel"><!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->{{lang 'common.cart'}}</span> <span class="countPill  {{#if cart.quantity}}countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
             </a>
 
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
         </li>
 
-        <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
-        {{> components/common/quick-search}}
-    </div>
+        <li class="navUser-item navUser-item--account">
+            {{#if customer}}
+                <a class="navUser-action" href="{{urls.account.index}}"><!-- <i class="fa fa-user" aria-hidden="true"></i> -->{{lang 'common.account'}}</a>
+                <a class="navUser-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+            {{else}}
+                <a class="navUser-action" href="{{urls.auth.login}}"><!-- <i class="fa fa-user" aria-hidden="true"></i> -->{{lang 'common.login'}}</a>
+                {{#if settings.account_creation_enabled}}
+                    <!-- <span class="navUser-or">{{lang 'common.or'}}</span> <a class="navUser-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a> -->
+                {{/if}}
+            {{/if}}
+        </li>
+
+        <li class="br-line"></li>
+
+        <li class="navUser-item navUser-item--search">
+            {{> components/common/quick-search}}
+        </li>
+
+        <!-- <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+            {{!> components/common/quick-search}}
+        </div> -->
     </ul>
     
 </nav>

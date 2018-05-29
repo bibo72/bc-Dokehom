@@ -40,10 +40,11 @@ cite {
     margin: 0 0 spacing("double");
     text-align: center;
     text-transform: uppercase;
+    font-family: "Gentium Basic";
 
     @include breakpoint("medium") {
         font-size: 30px;
-        margin-bottom: 70px;
+        margin-bottom: 50px;
     }
 
     &.has-line {
@@ -52,16 +53,23 @@ cite {
             content: "";
             position: absolute;
             top: 50%;
-            width: 30%;
-            border-bottom: 1px solid stencilColor("color-yellow");
+            width: 15%;
+            height: 2px;
+            //border-bottom: 1px solid stencilColor("color-yellow");
+            background-image: url('../img/custom/h-t-line.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
 
         &:before {
-            left: 0;
+            left: 20%;
+            background-position: right;
 
         }
         &:after {
-            right: 0;
+            right: 20%;
+            background-position: left;
         }
     }
 }

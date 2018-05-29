@@ -12,6 +12,23 @@
     @include grid-row(
         $behavior: nest
     );
+    margin-left: 20px;
+    margin-right: 20px;
+
+
+    .slick-next {
+        right: -30px;
+        @include breakpoint("medium") {
+            right: -20px;
+        }
+    }
+
+    .slick-prev {
+        left: -30px;
+        @include breakpoint("medium") {
+            left: -20px;
+        }
+    }
 }
 
 .productCarousel-slide { // 1
@@ -32,5 +49,23 @@
     .card {
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+}
+
+
+.brandsList {
+    /* .productCarousel-slide {
+        padding: 0 20px;
+    } */
+
+    .card {
+        padding: 0 10px;
+
+        @include breakpoint("small") {
+            padding: 0 50px;
+        }
+    }
+    .card-img-container:after {
+        padding-bottom: 55%;
     }
 }

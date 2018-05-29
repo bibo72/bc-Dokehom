@@ -41,7 +41,11 @@
     }
 
     &.slick-dotted.slick-slider {
-        margin-bottom: 105px;
+        margin-bottom: 40px;
+
+        @include breakpoint("medium") {
+            margin-bottom: 70px;
+        }
     }
 
     .slick-next,

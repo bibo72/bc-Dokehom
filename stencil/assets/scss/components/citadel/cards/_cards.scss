@@ -19,7 +19,7 @@
 
     }
 
-    &:hover {
+    &.card-shape:hover {
         box-shadow: 0 0 15px 8px #ddd;
 
         // scss-lint:disable NestingDepth

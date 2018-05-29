@@ -32,19 +32,19 @@
                     {{> components/common/subscription-form}}
                 {{/if}}
 
-                {{#if settings.address}}
-                <address>{{nl2br settings.address}}</address>
-                {{/if}}
+                {{!#if settings.address}}
+                <!-- <address>{{nl2br settings.address}}</address> -->
+                {{!/if}}
 
-                {{#if settings.phone_number}}
-                    <p class="info-span">{{lang 'footer.call_us' phone_number=settings.phone_number}}</p>
-                {{/if}}
+                {{!#if settings.phone_number}}
+                    <!-- <p class="info-span">{{lang 'footer.call_us' phone_number=settings.phone_number}}</p> -->
+                {{!/if}}
 
-                {{#if theme_settings.site_email}}
-                    <p class="info-span">{{theme_settings.site_email}}</p>
-                {{/if}}
+                {{!#if theme_settings.site_email}}
+                    <!-- <p class="info-span">{{theme_settings.site_email}}</p> -->
+                {{!/if}}
 
-                {{> components/common/payment-icons}}
+                {{!> components/common/payment-icons}}
             </article>
         </section>
 
@@ -66,7 +66,7 @@
         
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="display:none;">
     <div class="container">
         {{#if theme_settings.show_powered_by}}
             <div class="footer-copyright">

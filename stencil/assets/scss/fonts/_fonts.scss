@@ -30,6 +30,7 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
   font-weight: 900;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'HelveticaNeueLTPro Roman';
   src: url('../fonts/helvetica/HelveticaNeueLTPro-Roman.otf');
@@ -37,6 +38,100 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
   font-style: normal;
 }
 
+@font-face {
+    font-family: "Gentium Basic";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/genbas/genbasr-webfont.woff2") format("woff2"),
+         url("../fonts/genbas/genbasr-webfont.woff") format("woff"),
+         url("../fonts/genbas/genbasr-webfont.ttf") format("truetype"),
+         url("../fonts/genbas/genbasr-webfont.eot"),
+         url("../fonts/genbas/genbasr-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/genbas/genbasr-webfont.svg#Gentium Basic") format("svg");
+}
+@font-face {
+    font-family: "Gentium Basic";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/genbas/genbasb-webfont.woff2") format("woff2"),
+         url("../fonts/genbas/genbasb-webfont.woff") format("woff"),
+         url("../fonts/genbas/genbasb-webfont.ttf") format("truetype"),
+         url("../fonts/genbas/genbasb-webfont.eot"),
+         url("../fonts/genbas/genbasb-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/genbas/genbasb-webfont.svg#Gentium Basic") format("svg");
+}
+
+@font-face {
+    font-family: '031-cai978';
+    src: url('../fonts/031-cai978/031-cai978-webfont.eot');
+    src: url('../fonts/031-cai978/031-cai978-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/031-cai978/031-cai978-webfont.woff2') format('woff2'),
+         url('../fonts/031-cai978/031-cai978-webfont.woff') format('woff'),
+         url('../fonts/031-cai978/031-cai978-webfont.ttf') format('truetype'),
+         url('../fonts/031-cai978/031-cai978-webfont.svg#031-cai978') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/avgardm-webfont.eot');
+    src: url('../fonts/avantgarde/avgardm-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/avgardm-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/avgardm-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/avgardm-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/avgardm-webfont.svg#avantgarde') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/avgardmi-webfont.eot');
+    src: url('../fonts/avantgarde/avgardmi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/avgardmi-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/avgardmi-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/avgardmi-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/avgardmi-webfont.svg#avantgarde') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/avgardn-webfont.eot');
+    src: url('../fonts/avantgarde/avgardn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/avgardn-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/avgardn-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/avgardn-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/avgardn-webfont.svg#avantgarde') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avantgarde';
+    src: url('../fonts/avantgarde/avgardni-webfont.eot');
+    src: url('../fonts/avantgarde/avgardni-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avantgarde/avgardni-webfont.woff2') format('woff2'),
+         url('../fonts/avantgarde/avgardni-webfont.woff') format('woff'),
+         url('../fonts/avantgarde/avgardni-webfont.ttf') format('truetype'),
+         url('../fonts/avantgarde/avgardni-webfont.svg#avantgarde') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'fzguli-s12sregular';
+    src: url('../fonts/fzguli/fzgljw-webfont.eot');
+    src: url('../fonts/fzguli/fzgljw-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fzguli/fzgljw-webfont.woff2') format('woff2'),
+         url('../fonts/fzguli/fzgljw-webfont.woff') format('woff'),
+         url('../fonts/fzguli/fzgljw-webfont.ttf') format('truetype'),
+         url('../fonts/fzguli/fzgljw-webfont.svg#fzguli-s12sregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'FontAwesome';

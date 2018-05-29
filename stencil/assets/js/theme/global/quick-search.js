@@ -8,7 +8,7 @@ export default function() {
     const $quickSearchResults = $('.quickSearchResults');
     const $quickSearchDiv = $('#quickSearch');
     const $searchQuery = $('#search_query');
-    const stencilDropDownExtendables = {
+    /*const stencilDropDownExtendables = {
         hide: () => {
             $searchQuery.blur();
         },
@@ -27,10 +27,10 @@ export default function() {
         if ($(e.target).closest('[data-prevent-quick-search-close], .modal-background').length === 0) {
             stencilDropDown.hide($container);
         }
-    };
+    };*/
 
     // stagger searching for 200ms after last input
-    const doSearch = _.debounce((searchQuery) => {
+    /*const doSearch = _.debounce((searchQuery) => {
         utils.api.search.search(searchQuery, {
             template: 'search/quick-results'
         }, (err, response) => {
@@ -40,9 +40,9 @@ export default function() {
 
             $quickSearchResults.html(response);
         });
-    }, 200);
+    }, 200);*/
 
-    utils.hooks.on('search-quick', (event) => {
+    /*utils.hooks.on('search-quick', (event) => {
         const searchQuery = $(event.currentTarget).val();
 
         // server will only perform search with at least 3 characters
@@ -51,7 +51,7 @@ export default function() {
         }
 
         doSearch(searchQuery);
-    });
+    });*/
 
     // Catch the submission of the quick-search
     $quickSearchDiv.on('submit', (event) => {

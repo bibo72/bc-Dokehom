@@ -68,7 +68,7 @@ $font-weight-bold:              fontWeight("bold");
 // We use these to control various global styles
 $body-bg:                       stencilColor("body-bg");
 $body-font-color:               stencilColor("color-textBase");
-$body-font-family:              HelveticaNeueLTPro, Helvetica, Arial, sans-serif;
+$body-font-family:              avantgarde, HelveticaNeueLTPro, Helvetica, Arial, sans-serif;
 $body-font-weight:              stencilFontWeight("body-font");
 $body-font-style:               null;
 
@@ -76,7 +76,7 @@ $body-font-style:               null;
 $font-smoothing:                antialiased;
 
 // We use these to control header font styles
-$header-font-family:            HelveticaNeueLTPro, Helvetica, Arial, sans-serif;
+$header-font-family:            avantgarde, HelveticaNeueLTPro, Helvetica, Arial, sans-serif;
 $header-font-weight:            stencilFontWeight("headings-font");
 $header-font-style:             null;
 $header-font-color:             stencilColor("color-textHeading");

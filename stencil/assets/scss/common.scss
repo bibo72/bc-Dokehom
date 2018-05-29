@@ -101,6 +101,19 @@ $tab-active-color: #ffffff;
     } 
 }
 
+.table-wrap {
+
+    @include breakpoint("medium") {
+        display: table;
+        width: 100%;
+
+        .table-cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    
+}
 
 
 //ulList
